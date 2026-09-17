@@ -48,3 +48,27 @@ if (modal) {
     if (event.key === 'Escape') closeContact();
   });
 }
+
+document.querySelectorAll('.copy-wechat').forEach((copyButton) => {
+  copyButton.addEventListener('click', async () => {
+    const value = copyButton.dataset.wechat;
+    try {
+      await navigator.clipboard.writeText(value);
+    } catch {
+      const input = document.createElement('textarea');
+      input.value = value;
+      input.style.position = 'fixed';
+      input.style.opacity = '0';
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand('copy');
+      input.remove();
+    }
+    copyButton.textContent = '已复制';
+    copyButton.classList.add('is-copied');
+    window.setTimeout(() => {
+      copyButton.textContent = '复制';
+      copyButton.classList.remove('is-copied');
+    }, 1800);
+  });
+});
