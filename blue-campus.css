@@ -55,7 +55,7 @@ h1 em { color: #009ddd; position: relative; }
 .hero-art { height: 620px; position: relative; isolation: isolate; }
 .hero-art::before { content: ''; position: absolute; z-index: -1; inset: 17% -3% 10%; background: linear-gradient(145deg,#c8f1ff99,#77d6fc44); clip-path: polygon(22% 0,100% 0,78% 100%,0 100%); }
 .character-image { filter: drop-shadow(10px 12px 0 #008ecc15); }
-.about, .equipment, .location, .work { padding: 72px 0; grid-template-columns: 1fr 3fr; border-color: var(--line); }
+.about, .equipment, .location, .work, .partners { padding: 72px 0; grid-template-columns: 1fr 3fr; border-color: var(--line); }
 .section-number { font-size: 11px; letter-spacing: 1px; border-top: 3px solid var(--cyan); padding-top: 14px; width: fit-content; }
 .about h2 { font-size: clamp(25px,3vw,38px); line-height: 1.6; margin: 0 0 20px; letter-spacing: -1px; }
 .about p:not(.section-number) { font-size: 14px; max-width: 640px; }
@@ -95,6 +95,24 @@ h1 em { color: #009ddd; position: relative; }
 .project-meta h3 { font-size: 14px; margin: 0; }
 .project-meta p { font-size: 11px; margin: 5px 0; }
 .arrow { color: var(--cyan); }
+.partners { display:grid; gap:30px; border-top:1px solid var(--line); }
+.partners h2 { margin:0 0 26px; font-size:clamp(25px,3vw,38px); line-height:1.45; letter-spacing:-1px; }
+.partner-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+.partner-card { display:grid; grid-template-columns:160px 1fr; min-height:300px; overflow:hidden; border:1px solid var(--line); border-radius:6px; background:var(--surface); box-shadow:8px 8px 0 #9bdcf022; }
+.partner-card img { width:100%; height:100%; min-height:300px; object-fit:cover; object-position:50% 42%; filter:brightness(1.08) saturate(.88); }
+.mio-card { border-color:#63ccef; box-shadow:8px 8px 0 #63ccef26; background:linear-gradient(135deg,#f4fcff,#fff); }
+.mio-card img { object-fit:contain; padding:10px; background:#f2fbff; filter:none; }
+.mio-card .partner-role, .mio-card .partner-wechat strong { color:#168fc2; }
+.mio-card .partner-role { display:inline-flex; align-items:center; padding:5px 8px; border-radius:999px; background:#dff5ff; letter-spacing:1px; }
+.mio-card .partner-info h3 { color:#087bac; }
+.mio-card .partner-info h3 b { display:inline-block; margin-left:8px; padding:3px 7px; border:1px solid #63ccef; border-radius:3px; font-size:10px; font-weight:700; vertical-align:middle; letter-spacing:1px; }
+.partner-info { padding:34px; display:flex; flex-direction:column; align-items:flex-start; }
+.partner-role { color:var(--cyan); font-size:10px; font-weight:700; letter-spacing:2px; }
+.partner-info h3 { margin:12px 0; font-size:36px; letter-spacing:2px; }
+.partner-info p { margin:0; color:var(--muted); font-size:14px; }
+.partner-wechat { width:100%; margin-top:auto; padding-top:22px; border-top:1px solid var(--line); }
+.partner-wechat span { display:block; color:var(--muted); font-size:9px; letter-spacing:2px; }
+.partner-wechat strong { display:block; margin-top:5px; color:#087bb0; font-size:18px; letter-spacing:.5px; }
 footer { padding: 24px 0; font-size: 10px; letter-spacing: 1px; }
 .contact-modal { position:fixed; inset:0; z-index:20; display:grid; place-items:center; padding:24px; opacity:0; visibility:hidden; transition:opacity .2s,visibility .2s; }
 .contact-modal.is-open { opacity:1; visibility:visible; }
@@ -111,7 +129,7 @@ body.dark { --ink: #e2f4ff; --muted: #aac6d9; --paper: #14283c; --surface: #2039
   .container { width: calc(100% - 40px); }
   .hero { min-height: 600px; gap: 0; }
   .hero-art { height: 510px; }
-  .about, .equipment, .location, .work { grid-template-columns: 1fr; gap: 24px; }
+  .about, .equipment, .location, .work, .partners { grid-template-columns: 1fr; gap: 24px; }
 }
 @media(max-width:700px) {
   .nav { flex-wrap: wrap; gap: 16px; }
@@ -130,11 +148,16 @@ body.dark { --ink: #e2f4ff; --muted: #aac6d9; --paper: #14283c; --surface: #2039
   .hero-art { height: 470px; width: 100%; margin-top: 15px; }
   .stats { gap: 8px; }
   .stats > span { padding: 14px 10px; }
-  .about, .equipment, .location, .work { padding: 44px 0; }
+  .about, .equipment, .location, .work, .partners { padding: 44px 0; }
   .equipment-item { grid-template-columns:32px 1fr auto; gap:8px; }
   .equipment-type { grid-column:2; }
   .address-card { min-height:260px; padding:30px 24px; }
   .projects { grid-template-columns: 1fr; }
   .project-image { height: min(108vw, 520px); }
+  .partner-list { grid-template-columns:1fr; }
+  .partner-card { grid-template-columns:130px 1fr; min-height:270px; }
+  .partner-card img { min-height:270px; }
+  .partner-info { padding:24px 18px; }
+  .partner-info h3 { margin:8px 0; font-size:28px; }
 }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .primary { transition:none; } }
