@@ -19,9 +19,11 @@ em { font-style: normal; }
 .nav { padding: 24px 0; border-bottom: 1px solid var(--line); gap: 24px; }
 .logo { color: var(--ink); font-style: italic; letter-spacing: -1px; text-shadow: 3px 3px #8bdcfa66; position: relative; }
 .logo span { color: #00b8ee; margin-left: 8px; }
-.nav-links { margin-left: auto; gap: 36px; font-size: 13px; }
+.nav-links { margin-left: auto; gap: 36px; font-size: 13px; align-items:center; }
 .nav-links a { padding: 10px 0; border-bottom: 2px solid transparent; }
 .nav-links a:hover { border-color: var(--cyan); }
+.nav-contact { border:0; padding:10px 0; background:transparent; color:inherit; font:inherit; cursor:pointer; }
+.nav-contact:hover { color:var(--cyan); }
 .theme-toggle { background: var(--surface); color: var(--cyan); border-color: var(--line); border-radius: 9px; cursor: pointer; box-shadow: 0 4px 12px #2995c510; }
 .hero { min-height: 690px; grid-template-columns: 1.12fr 1fr; gap: 24px; position: relative; }
 .hero-copy { position: relative; z-index: 2; padding: 60px 0; }
@@ -35,6 +37,9 @@ h1 em { color: #009ddd; position: relative; }
 .primary:hover { background: #008bc6; transform: skew(-6deg) translateY(-3px); }
 .secondary { padding:13px 17px; border:1px solid #8ccfe9; border-radius:4px; background:#ffffffcc; color:#167aa4; font-size:13px; transition:background .2s,border-color .2s; }
 .secondary:hover { background:#e5f7ff; border-color:#079edb; }
+.hero-address { display:flex; align-items:center; flex-wrap:wrap; gap:8px; width:fit-content; margin-top:22px; color:var(--muted); font-size:12px; line-height:1.7; }
+.hero-address span { color:var(--cyan); font-size:9px; letter-spacing:1.5px; font-weight:700; }
+.hero-address b { color:var(--cyan); font-size:16px; }
 .hero-note { color: var(--muted); margin-top: 54px; font-size: 9px; letter-spacing: 2px; display: flex; gap: 40px; }
 .hero-note span { color: var(--cyan); }
 .hero-art { height: 620px; position: relative; isolation: isolate; }
@@ -80,6 +85,15 @@ h1 em { color: #009ddd; position: relative; }
 .project-meta p { font-size: 11px; margin: 5px 0; }
 .arrow { color: var(--cyan); }
 footer { padding: 24px 0; font-size: 10px; letter-spacing: 1px; }
+.contact-modal { position:fixed; inset:0; z-index:20; display:grid; place-items:center; padding:24px; opacity:0; visibility:hidden; transition:opacity .2s,visibility .2s; }
+.contact-modal.is-open { opacity:1; visibility:visible; }
+.modal-backdrop { position:absolute; inset:0; background:#173c5688; backdrop-filter:blur(5px); }
+.modal-card { position:relative; width:min(420px,100%); padding:42px; border:1px solid #a9dced; border-radius:8px; background:#f8fdff; box-shadow:10px 10px 0 #078fca33; }
+.modal-label { color:var(--cyan); font-size:10px; font-weight:700; letter-spacing:2px; }
+.modal-card h2 { margin:16px 0 10px; font-size:28px; color:var(--ink); }
+.modal-card p { margin:0; color:var(--muted); font-size:14px; }
+.modal-card strong { display:block; margin-top:25px; padding:14px 16px; border-left:4px solid var(--cyan); background:#dcf5ff; color:#007ead; font-size:20px; letter-spacing:.5px; }
+.modal-close { position:absolute; top:13px; right:16px; border:0; background:transparent; color:var(--muted); font-size:28px; cursor:pointer; }
 body.dark { --ink: #e2f4ff; --muted: #aac6d9; --paper: #14283c; --surface: #203950; --line: #34516b; }
 :focus-visible { outline: 3px solid #ffca61; outline-offset: 5px; }
 @media(max-width:900px) {
@@ -92,11 +106,13 @@ body.dark { --ink: #e2f4ff; --muted: #aac6d9; --paper: #14283c; --surface: #2039
   .nav { flex-wrap: wrap; gap: 16px; }
   .logo { font-size: 24px; }
   .nav-links { display: flex; gap: 16px; font-size: 11px; }
+  .nav-contact { font-size:11px; }
   .theme-toggle { width: 30px; height: 30px; }
   .hero { display: flex; flex-direction: column; padding: 20px 0 0; }
   .hero-copy { width: 100%; padding: 24px 0 0; }
   h1 { font-size: clamp(38px,9vw,58px); letter-spacing: -2px; }
   .hero-note { margin-top: 32px; }
+  .hero-address { margin-top:18px; font-size:11px; }
   .actions { gap:8px; }
   .secondary { padding:12px 13px; font-size:12px; }
   .hero-art { height: 470px; width: 100%; margin-top: 15px; }
