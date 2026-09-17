@@ -114,6 +114,17 @@ h1 em { color: #009ddd; position: relative; }
 .partner-wechat span { display:block; color:var(--muted); font-size:9px; letter-spacing:2px; }
 .partner-wechat strong { display:block; margin-top:5px; color:#087bb0; font-size:18px; letter-spacing:.5px; }
 footer { padding: 24px 0; font-size: 10px; letter-spacing: 1px; }
+footer a { color:var(--cyan); font-weight:700; }
+footer a:hover { text-decoration:underline; }
+.share-page .share-hero { min-height:calc(100vh - 80px); display:grid; grid-template-columns:1.1fr .9fr; align-items:center; gap:40px; padding:56px 0 90px; }
+.share-page .share-copy { max-width:660px; }
+.share-page .share-copy h1 { max-width:700px; margin:18px 0; }
+.share-page .share-copy p { max-width:580px; color:var(--muted); font-size:16px; line-height:2; }
+.share-page .share-points { display:grid; gap:10px; margin-top:30px; }
+.share-page .share-points span { padding:13px 16px; border:1px solid var(--line); border-left:4px solid var(--cyan); background:var(--surface); font-size:13px; font-weight:700; }
+.share-page .share-visual { min-height:440px; padding:10px; border:1px solid var(--line); background:var(--surface); box-shadow:10px 12px 0 #2b9dcc1a; }
+.share-page .share-visual img { display:block; width:100%; height:420px; object-fit:cover; object-position:62% 50%; }
+body.dark .share-page .share-points span, body.dark .share-page .share-visual { background:#142c42f2; border-color:#315b78; box-shadow:8px 10px 0 #06152366; }
 .contact-modal { position:fixed; inset:0; z-index:20; display:grid; place-items:center; padding:24px; opacity:0; visibility:hidden; transition:opacity .2s,visibility .2s; }
 .contact-modal.is-open { opacity:1; visibility:visible; }
 .modal-backdrop { position:absolute; inset:0; background:#173c5688; backdrop-filter:blur(5px); }
@@ -194,5 +205,8 @@ body.dark .modal-card strong { background: #0d3853; color: #9beaff; }
   .partner-card img { min-height:270px; }
   .partner-info { padding:24px 18px; }
   .partner-info h3 { margin:8px 0; font-size:28px; }
+  .share-page .share-hero { grid-template-columns:1fr; min-height:auto; padding:42px 0 60px; gap:26px; }
+  .share-page .share-visual { min-height:300px; }
+  .share-page .share-visual img { height:280px; }
 }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .primary { transition:none; } }

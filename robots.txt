@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nekosakura64.github.io/nekofantasy-studio/sitemap.xml
