@@ -29,6 +29,8 @@ h1 em { display:inline-block; color:var(--archive-blue); transform:skew(-6deg); 
 .ocean-region::before { content:''; position:absolute; inset:0; z-index:-2; background:radial-gradient(ellipse at 22% 7%,#fff 0 2%,transparent 17%),radial-gradient(ellipse at 48% 11%,#fff 0 3%,transparent 21%),radial-gradient(ellipse at 80% 5%,#fff 0 2%,transparent 19%),linear-gradient(180deg,#e8fbff 0 12%,#93dff3 28%,#39b9df 58%,#b6ebf6 100%); }
 .ocean-region::after { content:none; }
 .ocean-region .about,.ocean-region .equipment,.ocean-region .location,.ocean-region .work,.ocean-region .partners { position:relative; z-index:1; border-color:#ffffff8f; }
+.ocean-region .about,.ocean-region .equipment { background:linear-gradient(118deg,#b9f4ecb8 0%,#8edff0a6 48%,#86c9e98c 100%); }
+.ocean-region .location,.ocean-region .work,.ocean-region .partners { background:linear-gradient(118deg,#e8faffd9 0%,#c9effad1 52%,#b7e2f4bd 100%); }
 .ocean-region .about h2,.ocean-region .equipment h2,.ocean-region .location h2,.ocean-region .partners h2 { text-shadow:0 2px 0 #ffffffa8; }
 .ocean-region .section-number { box-shadow:4px 5px 0 #ffffff55; }
 .ocean-region .stats > span,.ocean-region .equipment-item,.ocean-region .projects article,.ocean-region .partner-card,.ocean-region .location-content { box-shadow:7px 9px 0 #056f9d1b; }
@@ -95,6 +97,8 @@ body.dark .ocean-region { background:linear-gradient(180deg,#193d5a 0%,#164f73 3
 body.dark .ocean-region::before { background:radial-gradient(ellipse at 20% 9%,#75d9ff22 0 2%,transparent 18%),radial-gradient(ellipse at 73% 6%,#7edcff1f 0 3%,transparent 19%),linear-gradient(180deg,#153d5c 0%,#155779 40%,#0b3a59 100%); }
 body.dark .ocean-region::after { opacity:.72; background:repeating-radial-gradient(ellipse at 20% 88%,transparent 0 34px,#76dfff22 35px 38px,transparent 39px 69px),repeating-radial-gradient(ellipse at 77% 58%,transparent 0 42px,#8ae6ff1d 43px 46px,transparent 47px 85px),linear-gradient(180deg,#0f6f9855 0%,#0a3e6366 100%); }
 body.dark .ocean-region .about h2,body.dark .ocean-region .equipment h2,body.dark .ocean-region .location h2,body.dark .ocean-region .partners h2 { text-shadow:0 2px 10px #071a2bbb; }
+body.dark .ocean-region .about,body.dark .ocean-region .equipment { background:linear-gradient(118deg,#1a695f99 0%,#1e6180a6 52%,#245b88a6 100%); }
+body.dark .ocean-region .location,body.dark .ocean-region .work,body.dark .ocean-region .partners { background:linear-gradient(118deg,#1b435cb8 0%,#1d5374c7 52%,#214c6bc4 100%); }
 body.dark .section-number { background:linear-gradient(90deg,#1478a540,transparent); }
 body.dark .equipment-item b { background:#0f4664; color:#8be4ff; }
 body.dark .address-card::after { color:#72d5ff0d; }
